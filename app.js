@@ -35,7 +35,7 @@ function m2() {
     ).innerHTML = `Eng katta yig‘indi: ${sum3}, sonlar: ${number2} va ${number3}`;
   }
 }
-0
+0;
 
 function m3() {
   const input33 = document.getElementById("inputValue33").value;
@@ -58,30 +58,132 @@ function m3() {
 }
 
 function m4() {
-  const input4 = document.getElementById("inputValue4").value;
-  const A = parseInt(input4);
-  if (A % 2 === 0) {
-    document.getElementById("output4").innerText = "A soni juft";
+  const input = document.getElementById("inputValue4").value;
+  const number = parseInt(input);
+  let result = "";
+  if (isNaN(number) || number < 1 || number > 999) {
+    result = "Iltimos, 1 dan 999 gacha bo'lgan son kiriting.";
   } else {
-    document.getElementById("output4").innerText = "A soni toq";
+    const yuzlik = Math.floor(number / 100);
+    const onlik = Math.floor((number % 100) / 10);
+    const birlik = number % 10;
+    switch (yuzlik) {
+      case 1:
+        result += "Bir yuz ";
+        break;
+      case 2:
+        result += "Ikki yuz ";
+        break;
+      case 3:
+        result += "Uch yuz ";
+        break;
+      case 4:
+        result += "To'rt yuz ";
+        break;
+      case 5:
+        result += "Besh yuz ";
+        break;
+      case 6:
+        result += "Olti yuz ";
+        break;
+      case 7:
+        result += "Yetti yuz ";
+        break;
+      case 8:
+        result += "Sakkiz yuz ";
+        break;
+      case 9:
+        result += "To'qqiz yuz ";
+        break;
+    }
+    switch (onlik) {
+      case 1:
+        switch (birlik) {
+          case 0:
+            result += "O'n";
+            break;
+        }
+        birlik = 0;
+        break;
+      case 2:
+        result += "Yigirma ";
+        break;
+      case 3:
+        result += "O'ttiz ";
+        break;
+      case 4:
+        result += "Qirq ";
+        break;
+      case 5:
+        result += "Ellik ";
+        break;
+      case 6:
+        result += "Oltmish ";
+        break;
+      case 7:
+        result += "Yetmish ";
+        break;
+      case 8:
+        result += "Sakson ";
+        break;
+      case 9:
+        result += "To'qson ";
+        break;
+    }
+    switch (birlik) {
+      case 1:
+        result += "bir";
+        break;
+      case 2:
+        result += "ikki";
+        break;
+      case 3:
+        result += "uch";
+        break;
+      case 4:
+        result += "to'rt";
+        break;
+      case 5:
+        result += "besh";
+        break;
+      case 6:
+        result += "olti";
+        break;
+      case 7:
+        result += "yetti";
+        break;
+      case 8:
+        result += "sakkiz";
+        break;
+      case 9:
+        result += "to'qqiz";
+        break;
+    }
   }
+  document.getElementById("output4").innerHTML = `<p>${result}</p>`;
 }
 
 function m5() {
   const input5 = document.getElementById("inputValue5").value;
   const num = parseInt(input5);
-  if (num % 3 === 0 && num % 5 === 0) {
-    document.getElementById("output5").innerText =
-      "A soni 3 va 5 ga bo'linadi!";
-  } else if (num % 3 === 0) {
-    document.getElementById("output5").innerText = "A soni 3 ga bo'linadi!";
-  } else if (num % 5 === 0) {
-    document.getElementById("output5").innerText = "A soni 5 ga bo'linadi!";
-  } else {
-    document.getElementById("output5").innerText =
-      "A soni 3 va 5 ga bo'linmaydi!";
+  switch (num) {
+    case 1 || 3 || 5 || 7 || 8 || 10 || 12:
+      document.getElementById("output5").innerHTML = "Bu oy 31 kun.";
+      break;
+    case 2:
+      document.getElementById("output5").innerHTML =
+        "Bu oy 28 kun (kabisa yilida 29 kun).";
+      break;
+    case 4 || 6 || 9 || 11:
+      document.getElementById("output5").innerHTML = "Bu oy 30 kun.";
+      break;
+    default:
+      document.getElementById("output5").innerHTML = "Bunday oy yoq";
   }
 }
+
+
+
 
 function m6() {
   const inputA = document.getElementById("inputValueA").value;
