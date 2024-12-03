@@ -188,7 +188,7 @@ function m5() {
 function m6() {
   const input_61 = document.getElementById("inputValue6_1").value;
   const input_62 = document.getElementById("inputValue6_2").value; 
-  const Y = input_61.trim(); 
+  const Y = input_61.trim().toUpperCase(); 
   const K = parseInt(input_62); 
   let finalPosition = Y; 
   if (K === 1) {
@@ -208,6 +208,9 @@ function m6() {
   }
   document.getElementById("output6").innerHTML = `Final yo'nalish: ${finalPosition}`;
 }
+
+
+
 
 
 // SOME FUNCTION -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
