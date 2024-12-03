@@ -30,6 +30,14 @@
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+.limited-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 3 qatordan oshmasligi uchun */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 .button-85:before {
   content: "";

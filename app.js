@@ -186,42 +186,29 @@ function m5() {
 
 
 function m6() {
-  const inputA = document.getElementById("inputValueA").value;
-  const inputB = document.getElementById("inputValueB").value;
-  const A = parseInt(inputA);
-  const B = parseInt(inputB);
-  const AA = Math.abs(A - 5);
-  const BB = Math.abs(B - 5);
-  let resultMessage;
-  if (AA < BB) {
-    resultMessage = `A soni (${A}) 5 ga yaqinroq.`;
-  } else if (BB < AA) {
-    resultMessage = `B soni (${B}) 5 ga yaqinroq.`;
+  const input_61 = document.getElementById("inputValue6_1").value;
+  const input_62 = document.getElementById("inputValue6_2").value; 
+  const Y = input_61.trim(); 
+  const K = parseInt(input_62); 
+  let finalPosition = Y; 
+  if (K === 1) {
+    if (Y === "S") finalPosition = "g";
+    else if (Y === "q") finalPosition = "S";
+    else if (Y === "J") finalPosition = "q";
+    else if (Y === "g") finalPosition = "J";
+  } else if (K === 2) {
+    if (Y === "S") finalPosition = "q";
+    else if (Y === "q") finalPosition = "J";
+    else if (Y === "J") finalPosition = "g";
+    else if (Y === "g") finalPosition = "S";
+  } else if (K === 0) {
+    finalPosition = Y;
   } else {
-    resultMessage = `A (${A}) va B (${B}) sonlari 5 ga teng masofada.`;
+    finalPosition = "Noma'lum komanda";
   }
-  document.getElementById("output6").innerText = resultMessage;
+  document.getElementById("output6").innerHTML = `Final yo'nalish: ${finalPosition}`;
 }
 
-function m7n() {
-  const numbers = [12, 45, 67, 23, 89];
-  const firstNumber = numbers[0];
-  const lastNumber = numbers[numbers.length - 1];
-  const sum = firstNumber + lastNumber;
-
-  document.getElementById("output7n").innerText = "Arrar yig'indisi: " + sum;
-}
-
-function m7() {
-  const input = document.getElementById("inputValue7").value;
-  const numbers = input.split(",").map((num) => parseInt(num.trim()));
-  const firstNumber = numbers[0];
-  const lastNumber = numbers[numbers.length - 1];
-  const sum = firstNumber + lastNumber;
-  document.getElementById("output7").innerHTML = `
-     ${firstNumber} va ${lastNumber} => 
-     Yig'indisi: ${sum}`;
-}
 
 // SOME FUNCTION -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
