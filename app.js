@@ -66,7 +66,7 @@ function m4() {
   } else {
     const yuzlik = Math.floor(number / 100);
     const onlik = Math.floor((number % 100) / 10);
-    const birlik = number % 10;
+    let birlik = number % 10;
     switch (yuzlik) {
       case 1:
         result += "Bir yuz ";
@@ -96,68 +96,95 @@ function m4() {
         result += "To'qqiz yuz ";
         break;
     }
-    switch (onlik) {
-      case 1:
-        switch (birlik) {
-          case 0:
-            result += "O'n";
-            break;
-        }
-        birlik = 0;
-        break;
-      case 2:
-        result += "Yigirma ";
-        break;
-      case 3:
-        result += "O'ttiz ";
-        break;
-      case 4:
-        result += "Qirq ";
-        break;
-      case 5:
-        result += "Ellik ";
-        break;
-      case 6:
-        result += "Oltmish ";
-        break;
-      case 7:
-        result += "Yetmish ";
-        break;
-      case 8:
-        result += "Sakson ";
-        break;
-      case 9:
-        result += "To'qson ";
-        break;
-    }
-    switch (birlik) {
-      case 1:
-        result += "bir";
-        break;
-      case 2:
-        result += "ikki";
-        break;
-      case 3:
-        result += "uch";
-        break;
-      case 4:
-        result += "to'rt";
-        break;
-      case 5:
-        result += "besh";
-        break;
-      case 6:
-        result += "olti";
-        break;
-      case 7:
-        result += "yetti";
-        break;
-      case 8:
-        result += "sakkiz";
-        break;
-      case 9:
-        result += "to'qqiz";
-        break;
+    if (onlik === 1) {
+      switch (birlik) {
+        case 0:
+          result += "O'n";
+          break;
+        case 1:
+          result += "O'n bir";
+          break;
+        case 2:
+          result += "O'n ikki";
+          break;
+        case 3:
+          result += "O'n uch";
+          break;
+        case 4:
+          result += "O'n to'rt";
+          break;
+        case 5:
+          result += "O'n besh";
+          break;
+        case 6:
+          result += "O'n olti";
+          break;
+        case 7:
+          result += "O'n yetti";
+          break;
+        case 8:
+          result += "O'n sakkiz";
+          break;
+        case 9:
+          result += "O'n to'qqiz";
+          break;
+      }
+    } else {
+      switch (onlik) {
+        case 2:
+          result += "Yigirma ";
+          break;
+        case 3:
+          result += "O'ttiz ";
+          break;
+        case 4:
+          result += "Qirq ";
+          break;
+        case 5:
+          result += "Ellik ";
+          break;
+        case 6:
+          result += "Oltmish ";
+          break;
+        case 7:
+          result += "Yetmish ";
+          break;
+        case 8:
+          result += "Sakson ";
+          break;
+        case 9:
+          result += "To'qson ";
+          break;
+      }
+      switch (birlik) {
+        case 1:
+          result += "bir";
+          break;
+        case 2:
+          result += "ikki";
+          break;
+        case 3:
+          result += "uch";
+          break;
+        case 4:
+          result += "to'rt";
+          break;
+        case 5:
+          result += "besh";
+          break;
+        case 6:
+          result += "olti";
+          break;
+        case 7:
+          result += "yetti";
+          break;
+        case 8:
+          result += "sakkiz";
+          break;
+        case 9:
+          result += "to'qqiz";
+          break;
+      }
     }
   }
   document.getElementById("output4").innerHTML = `<p>${result}</p>`;
@@ -182,15 +209,12 @@ function m5() {
   }
 }
 
-
-
-
 function m6() {
   const input_61 = document.getElementById("inputValue6_1").value;
-  const input_62 = document.getElementById("inputValue6_2").value; 
-  const Y = input_61.trim().toUpperCase(); 
-  const K = parseInt(input_62); 
-  let finalPosition = Y; 
+  const input_62 = document.getElementById("inputValue6_2").value;
+  const Y = input_61.trim().toUpperCase();
+  const K = parseInt(input_62);
+  let finalPosition = Y;
   if (K === 1) {
     if (Y === "S") finalPosition = "g";
     else if (Y === "q") finalPosition = "S";
@@ -206,12 +230,10 @@ function m6() {
   } else {
     finalPosition = "Noma'lum komanda";
   }
-  document.getElementById("output6").innerHTML = `Final yo'nalish: ${finalPosition}`;
+  document.getElementById(
+    "output6"
+  ).innerHTML = `Final yo'nalish: ${finalPosition}`;
 }
-
-
-
-
 
 // SOME FUNCTION -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
